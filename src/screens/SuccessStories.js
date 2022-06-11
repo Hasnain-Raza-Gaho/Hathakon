@@ -5,7 +5,7 @@ import {styles} from '../Theme/styles';
 const SuccessStories = () => {
   return (
     <View style={styles.container}>
-      <Text>Success Stories</Text>
+      <Text>Add Here Success Stories</Text>
     </View>
   );
 };

@@ -10,6 +10,35 @@
       "client_info": {
         "mobilesdk_app_id": "1:628992143595:android:7f05f6f8b3f7a28c4a8eae",
         "android_client_info": {
+          "package_name": "com.app.SaylaniApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628992143595-165rpo39l2cholchfk3avvvo0ip22lmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhYwSf4dNZvVAQL8EzqMKqdsRi4D8KLyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628992143595-165rpo39l2cholchfk3avvvo0ip22lmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628992143595:android:b20f0dbaccf706c64a8eae",
+        "android_client_info": {
           "package_name": "com.hathakon"
         }
       },

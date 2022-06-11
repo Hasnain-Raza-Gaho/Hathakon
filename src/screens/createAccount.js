@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import auth from '@react-native-firebase/auth';
+import database from '@react-native-firebase/database';
 import {styles} from '../Theme/styles';
 
 const CreateAccount = ({navigation}) => {
@@ -7,6 +9,38 @@ const CreateAccount = ({navigation}) => {
   const [Lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
+
+  const createaccount = () => {
+    auth()
+      .createUserWithEmailAndPassword(email, Password)
+      .then(newUser => {
+        console.log('User account created & signed in!');
+        console.log(newUser)
+        database().ref('/Hathakon/users').child(newUser.user.uid).set({
+          Fname,
+          Lname,
+          email,
+          Password,
+        });
+        navigation.navigate('Login');
+      })
+      .catch(error => {
+        if (error.code === 'auth/email-already-in-use') {
+          console.log('That email address is already in use!');
+        }
+
+        if (error.code === 'auth/invalid-email') {
+          console.log('That email address is invalid!');
+        }
+
+        console.error(error);
+      });
+  };
+
+  // import data from firebase
+
+  // database().ref('Admin').once("value").then(function(snapshot) {
+  // console.log(snapshot.val()["email"])
 
   return (
     <View style={styles.container}>
@@ -36,12 +70,12 @@ const CreateAccount = ({navigation}) => {
           styles.TouchableBtn1,
           {marginHorizontal: 50, paddingHorizontal: 30},
         ]}
-        onPress={() => navigation.navigate('Login')}>
+        onPress={() => createaccount()}>
         <Text style={styles.TouchableText1}>Create Account</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('CreateAccount')}
+        onPress={() => CreateAccount()}
         style={{
           justifyContent: 'center',
           alignItems: 'center',

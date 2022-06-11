@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Button} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -10,12 +10,14 @@ import SignInSignUp from './src/screens/SignInSignUp';
 import CreateAccount from './src/screens/createAccount';
 import Login from './src/screens/Login';
 import Home from './src/screens/Home';
+import AdminHome from './src/screens/AdminHome';
+
 const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CreateAccount">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="splash"
           component={SplashScreen}
@@ -47,6 +49,13 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="AdminHome"
+          component={AdminHome}
           options={{
             headerShown: false,
           }}

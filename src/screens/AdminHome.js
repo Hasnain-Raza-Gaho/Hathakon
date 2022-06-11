@@ -5,12 +5,12 @@ import Courses from './Courses';
 import SuccessStories from './SuccessStories';
 import UserProfile from './UserProfile';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
+import SendCourses from './sendCourses';
 
 const Tab = createBottomTabNavigator();
-
-function Home() {
+function AdminHome() {
   return (
-    <Tab.Navigator initialRouteName="RegForm">
+    <Tab.Navigator initialRouteName="Courses">
       <Tab.Screen
         name="Courses"
         component={Courses}
@@ -46,6 +46,15 @@ function Home() {
           //   tabBarIcon: () => <BottomIcons name="person" />,
         }}
       />
+
+      <Tab.Screen
+        name="sendCourse"
+        component={SendCourses}
+        options={{
+          headerShown: false,
+          //   tabBarIcon: () => <BottomIcons name="person" />,
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -55,4 +64,4 @@ const BottomIcons = props => {
   return <IonicIcon name={props.name} size={20} />;
 };
 
-export default Home;
+export default AdminHome;
