@@ -11,5 +11,3 @@ const UserProfile = () => {
 }
 
 export default UserProfile
-
-const styles = StyleSheet.create({})

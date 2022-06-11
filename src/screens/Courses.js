@@ -11,5 +11,3 @@ const Courses = () => {
 }
 
 export default Courses
-
-const styles = StyleSheet.create({})

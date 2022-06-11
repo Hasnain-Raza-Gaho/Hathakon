@@ -1,21 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {styles} from '../Theme/styles';
 
 const CreateAccount = ({navigation}) => {
+  const [Fname, setFname] = useState('');
+  const [Lname, setLname] = useState('');
+  const [email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
+
   return (
     <View style={styles.container}>
       <View style={styles.input1}>
-        <TextInput placeholder="First Name" />
+        <TextInput
+          placeholder="First Name"
+          onChangeText={val => setFname(val)}
+        />
       </View>
       <View style={styles.input1}>
-        <TextInput placeholder="Last Name" />
+        <TextInput
+          placeholder="Last Name"
+          onChangeText={val => setLname(val)}
+        />
       </View>
       <View style={styles.input1}>
-        <TextInput placeholder="Email" />
+        <TextInput placeholder="Email" onChangeText={val => setEmail(val)} />
       </View>
       <View style={styles.input1}>
-        <TextInput placeholder="Password" />
+        <TextInput
+          placeholder="Password"
+          onChangeText={val => setPassword(val)}
+        />
       </View>
       <TouchableOpacity
         style={[

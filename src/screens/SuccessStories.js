@@ -11,5 +11,3 @@ const SuccessStories = () => {
 };
 
 export default SuccessStories;
-
-const styles = StyleSheet.create({});
