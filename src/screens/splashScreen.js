@@ -3,11 +3,11 @@ import {View, Text, Image} from 'react-native';
 import {styles} from '../Theme/styles';
 
 const SplashScreen = ({navigation}) => {
-  //   useEffect(()=>{
-  //     setTimeout(()=>{
-  //         navigation.navigate("SignInSignUp")
-  //     },500)
-  // },[])
+    useEffect(()=>{
+      setTimeout(()=>{
+          navigation.navigate("SignInSignUp")
+      },1200)
+  },[])
 
   return (
     <View

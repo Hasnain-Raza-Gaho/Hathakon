@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 
 function Home() {
   return (
-    <Tab.Navigator initialRouteName="RegForm">
+    <Tab.Navigator>
       <Tab.Screen
         name="Courses"
         component={Courses}

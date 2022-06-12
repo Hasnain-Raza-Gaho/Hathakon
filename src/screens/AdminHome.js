@@ -10,7 +10,7 @@ import SendCourses from './sendCourses';
 const Tab = createBottomTabNavigator();
 function AdminHome() {
   return (
-    <Tab.Navigator initialRouteName="Courses">
+    <Tab.Navigator>
       <Tab.Screen
         name="Courses"
         component={Courses}
